@@ -10,12 +10,12 @@ import java.sql.DriverManager;
 
 import com.naz.tlqkf.vo.MemberTbVO;
 
-public class MemberTbDAO {	// db에 값 보내는거
-	public int memberInsert(MemberTbVO vo) {
-		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe"; // ip, port, sid �ʼ�
-		String user="babo";
-		String password="bako";
+public class MemberTbDAO {	
+	public int memberInsert(MemberTbVO vo) {	// db에 값 보내는거
+		String driver = "oracle.jdbc.driver.OracleDriver";	// 드라이버 설정 (mysql인지 오라클인지 그런거)
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe"; // ip, port, sid 필수
+		String user="babo";									// 접속 db id
+		String password="bako";								// 접속 db pw
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		int inct=0;
@@ -91,4 +91,36 @@ public class MemberTbDAO {	// db에 값 보내는거
 		return list;
 	}
 
+	
+	public int memberInsert(String id) {	// db에서 삭제
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe"; // ip, port, sid 필수
+		String user="babo";
+		String password="bako";
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int inct=0;
+		
+		try {
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, user, password);
+			String query = "delete memberTb where userId = ?";
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			inct = pstmt.executeUpdate();
+			
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally{
+			if(pstmt != null)
+				try { pstmt.close(); } catch (SQLException e) { }
+				
+			if(con != null)
+				try { con.close(); } catch (SQLException e) { }
+		}
+		
+		return inct;
+	}
 }

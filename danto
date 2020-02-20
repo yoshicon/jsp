@@ -1,0 +1,65 @@
+string{
+	거의 고정되면 이거
+}
+stringbuffer{
+	속도 좀 느림
+	스레드에 안전
+	이거 웹 프로그래밍 할 때 이거 ㅊㅊ
+	에러가 날 확률이 적어
+}
+stringbuilder{
+	스레드에 안전하진 않음
+}
+
+DB{
+CRUD
+	만들기
+	읽기
+	수정
+	삭제
+}
+
+인코딩{////////////////////////////////////////// 필수
+	workspace
+	spelling
+}
+
+eclips ee - 웹 개발할 때
+oracle 11g xe
+sql 디벨로퍼
+ojdbc6.jar{
+	저장 후 이클립스에서 지정한 폴더에 저장
+	web-inf 밑에
+	jre/lib/etc
+}
+
+solid{
+	각 뭔지 5번쯤 읽어보세
+}
+
+DB 건드릴 때 삭제 자제
+당신의 delete, update로 대체되었다
+지워진것 처럼 보이게 바꾸장
+쓰레기같아도 따로 빼두자
+
+
+select 보고싶은 내용
+from "table로 해석될 수 있는 모든거"
+
+quota - 얼마만큼 사용 가능한지 할당
+quota 0m on system
+quota 0m on sysaux
+quota 0m on UNDOTBS1
+
+
+
+create table member(
+	userName VARCHAR(25),
+	userID   VARCHAR(25),
+	userIW   VARCHAR(40),
+	useraDDR VARCHAR(100),
+);
+
+oracledriver.class
+
+DB 건드릴 때 시스템 계정으로 건드리면 아주 좆대는거에여
