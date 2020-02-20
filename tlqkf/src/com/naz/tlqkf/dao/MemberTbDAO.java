@@ -1,16 +1,19 @@
 package com.naz.tlqkf.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 import com.naz.tlqkf.vo.MemberTbVO;
 
-public class MemberTbDAO {
+public class MemberTbDAO {	// db에 값 보내는거
 	public int memberInsert(MemberTbVO vo) {
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe"; // ip, port, sid �ʼ�
 		String user="babo";
 		String password="bako";
 		Connection con = null;
@@ -41,6 +44,51 @@ public class MemberTbDAO {
 		}
 		
 		return inct;
+	}
+	
+	
+	
+	public List<MemberTbVO> getMembers() {	// db에서 가져오는거
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+		String user="babo";
+		String password="bako";
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<MemberTbVO> list = new ArrayList<MemberTbVO>();
+		
+		try {
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, user, password);
+			String query = "select * from memberTb";
+			pstmt = con.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				MemberTbVO vo = new MemberTbVO();
+				vo.setUserName(rs.getString("userName"));
+				vo.setUserId(rs.getString("userId"));
+				vo.setUserPw(rs.getString("userPw"));
+				vo.setUserAddr(rs.getString("userAddr"));
+				list.add(vo);
+			}
+			
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally{
+			if(rs != null)
+				try { rs.close(); } catch (SQLException e) { }
+			
+			if(pstmt != null)
+				try { pstmt.close(); } catch (SQLException e) { }
+				
+			if(con != null)
+				try { con.close(); } catch (SQLException e) { }
+		}
+		
+		return list;
 	}
 
 }

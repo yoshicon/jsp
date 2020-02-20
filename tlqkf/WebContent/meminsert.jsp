@@ -23,10 +23,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>마 못할거 모인노</title>
 </head>
 <body bgcolor="888888">
-	<h1>입력 결과 화면</h1>
+	<a href="memberIn.html"><h1>다시 돌아가기</h1></a>
 	<p>입력된 자료 갯수 : <%= rtval %></p>
 	
 	<h2> 입력된 정보</h2>
