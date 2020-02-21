@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body bgcolor="#ffccbb">
 
 <a href="memberIn.html"><h1>멤버 조회 결과</h1></a>
 <table>
@@ -22,10 +22,10 @@
 %>
 	<tr>
 		<td>
-			<%= list.get(i).getUserId() %>
+			<%= list.get(i).getUserName() %>
 		</td>
 		<td>
-			<%= list.get(i).getUserName() %>
+			<%= list.get(i).getUserId() %>
 		</td>
 		<td>
 			<%= list.get(i).getUserPw() %>

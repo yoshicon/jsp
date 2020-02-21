@@ -1,5 +1,5 @@
-<%@page import="com.naz.tlqkf.dao.MemberTbDAO"%>
 <%@page import="com.naz.tlqkf.vo.MemberTbVO"%>
+<%@page import="com.naz.tlqkf.dao.MemberTbDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -34,5 +34,6 @@
 	<p>아이디 : <%= userId%></p>
 	<p>비번 : <%= userPw %></p>
 	<p>주소 : <%= userAddr %></p>
+	<a href="getMember.jsp">목록 보기</a>
 </body>
 </html>
