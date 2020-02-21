@@ -63,3 +63,14 @@ create table member(
 oracledriver.class
 
 DB 건드릴 때 시스템 계정으로 건드리면 아주 좆대는거에여
+
+create table sample(
+    col1 number(5) null, /*이게 인라인방식으로 제약조건 거는거 null, noy null은 이렇게밖에 못함*/
+    col2 number(5,2) not null,
+    col3 varchar2(5) UNIQUE,
+    col4 varchar2(15),
+    CONSTRAINT spl_clm5_pk PRIMARY key (col4)   /*이거시 아웃라인방식으로 제약조건 거는거 선언하고 그 담에 조건 주는거*/
+				ㄴ이 부분이 제약조건을 이렇게 부른다고 말하는거
+);
+
+복합 유니크 가능

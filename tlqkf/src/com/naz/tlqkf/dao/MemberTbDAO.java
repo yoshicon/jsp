@@ -92,7 +92,7 @@ public class MemberTbDAO {
 	}
 
 	
-	public int memberInsert(String id) {	// db에서 삭제
+	public int memberInsert(String id) {	// db에서 삭제 - 근데 구현 못함
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe"; // ip, port, sid 필수
 		String user="babo";

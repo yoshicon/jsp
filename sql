@@ -79,3 +79,8 @@ INSERT INTO membertb( username, userid, userpw, useraddr)
 	private String userAddr;
 
 */
+
+quota 0m on{
+	system
+	sysaux
+}
