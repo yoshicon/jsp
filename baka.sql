@@ -87,3 +87,21 @@ DEPARTMENT_ID NUMBER(4,0),
 );
 
 select * from tab;
+
+create table membertb(
+	userName VARCHAR(25),
+	userId   VARCHAR(25),
+	userPw   VARCHAR(40),
+	userAddr VARCHAR(100)
+);
+
+SELECT * FROM membertb where USERID like'%va%';
+select * from membertb;
+ALTER TABLE membertb DROP COLUMN sex;
+
+DELETE * FROM membertb WHERE username != like'%va%';
+
+delete from membertb;
+
+commit;
+
