@@ -2,7 +2,7 @@ package filecpmt;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-
+// 파일 복호화
 public class FileRecv {
 	public static void main(String[] args) throws Exception {
 		if(args.length < 2) {

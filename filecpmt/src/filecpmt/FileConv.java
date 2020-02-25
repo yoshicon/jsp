@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Random;
-
+// 파일 암호화
 public class FileConv {
 	public static void main(String[] args) throws IOException {
 		if(args.length < 2) {
