@@ -2,6 +2,7 @@ package basic;
 
 public class XdigitConDec {
 	String digitStr = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz가나다라마바사아자차카타파하";
+//					   1234567890123456789012345678901234567890123456789012345678901234567890123456789
 
 	public double decimalCal(String numData, int digitinfo) {
 		
