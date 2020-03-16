@@ -26,7 +26,7 @@ public class TcpIpSv {
 				OutputStream out = socket.getOutputStream();
 				DataOutputStream dos = new DataOutputStream(out);
 				
-				dos.writeUTF("પ નુલુગ લસશ");
+				dos.writeUTF("접속, 성공, 완벽");
 				
 				dos.close();
 				socket.close();

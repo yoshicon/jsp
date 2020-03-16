@@ -7,7 +7,7 @@ import java.net.Socket;
 public class TcpIpCl {
 
 	public static void main(String[] args) throws Exception{
-		Socket socket = new Socket("172.30.1.4", 7777);
+		Socket socket = new Socket("172.0.0.1", 7777);
 		InputStream ins = socket.getInputStream();
 		DataInputStream dis = new DataInputStream(ins);
 		System.out.println(dis.readUTF());
